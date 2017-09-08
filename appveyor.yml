@@ -12,6 +12,8 @@ build:
 after_build:
   - mkdir WindBot
   - cp -rf bin/x86/Release/* WindBot
+  - git clone https://github.com/moecube/ygopro-database
+  - cp -rf ygopro-database/locales/zh-CN/cards.cdb WindBot
   - 7z a WindBot.7z WindBot
 
 test: off
