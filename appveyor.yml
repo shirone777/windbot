@@ -1,0 +1,22 @@
+version: '{build}'
+skip_tags: true
+
+install:
+  
+configuration: Release
+
+build: 
+    project: Windbot.sln
+    parallel: true
+
+after_build:
+  - mkdir WindBot
+  - cp -rf bin/x86/Release/* WindBot
+  - 7z a WindBot.7z WindBot
+
+test: off
+
+artifacts:
+  - path: WindBot.7z
+    name: WindBot
+    
