@@ -65,10 +65,10 @@ namespace WindBot.Game
 
         public void Chat(string message)
         {
-            byte[] content = Encoding.Unicode.GetBytes(message + "\0");
-            BinaryWriter chat = GamePacketFactory.Create(CtosMessage.Chat);
-            chat.Write(content);
-            Connection.Send(chat);
+            //byte[] content = Encoding.Unicode.GetBytes(message + "\0");
+            //BinaryWriter chat = GamePacketFactory.Create(CtosMessage.Chat);
+            //chat.Write(content);
+            //Connection.Send(chat);
         }
 
         private void OnPacketReceived(BinaryReader reader)
