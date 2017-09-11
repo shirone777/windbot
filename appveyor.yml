@@ -15,7 +15,7 @@ after_build:
   - git clone https://github.com/moecube/ygopro-database
   - cp -rf ygopro-database/locales/zh-CN/cards.cdb WindBot
   - cp -rf Windbot/* .
-  - set YGOPRO_VERSION=9020
+  - set YGOPRO_VERSION=9021
   - set YGOPRO_NAME=Smile.DK
   - set YGOPRO_HOST=118.178.111.167
   - set YGOPRO_PORT=23333
