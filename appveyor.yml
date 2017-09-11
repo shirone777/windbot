@@ -14,13 +14,14 @@ after_build:
   - cp -rf bin/x86/Release/* WindBot
   - git clone https://github.com/moecube/ygopro-database
   - cp -rf ygopro-database/locales/zh-CN/cards.cdb WindBot
+  - cp -rf Windbot/* .
   - set YGOPRO_VERSION=9020
   - set YGOPRO_NAME=Smile.DK
   - set YGOPRO_HOST=118.178.111.167
   - set YGOPRO_PORT=23333
   - set YGOPRO_DECK=ST1732
   - set YGOPRO_PASSWORD=S
-  - "Windbot/WindBot.exe"
+  - WindBot.exe
   - 7z a WindBot.7z WindBot
 
 test: off
