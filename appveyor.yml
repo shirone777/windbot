@@ -21,7 +21,7 @@ after_build:
   - set YGOPRO_PORT=23333
   - set YGOPRO_DECK=Nekroz
   - set YGOPRO_PASSWORD=S
-  - WindBot.exe > result.txt
+  - WindBot.exe
   - 7z a WindBot.7z WindBot
 
 test: off
@@ -29,6 +29,4 @@ test: off
 artifacts:
   - path: WindBot.7z
     name: WindBot
-  - path: result.txt
-    name: Duel result
     
