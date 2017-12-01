@@ -11,7 +11,7 @@ namespace WindBot
         public static void DebugWriteLine(string message)
         {
 //#if DEBUG
-            Console.WriteLine("[DEBUG: " + DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + "] " + message);
+            Console.WriteLine("[DEBUG: [" + DateTime.Now.ToString("yy-MM-dd HH:mm:ss") + "] " + message);
 //#endif
         }
         public static void WriteErrorLine(string message)
