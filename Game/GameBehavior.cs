@@ -43,7 +43,6 @@ namespace WindBot.Game
             _ai = new GameAI(Game, _duel);
             _ai.Executor = DecksManager.Instantiate(_ai, _duel);
             Deck = Deck.Load(_ai.Executor.Deck);
-            Logger.DebugWriteLine(otherName + " say to " + myName + ": " + message);
             _select_hint = 0;
         }
 
