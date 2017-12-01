@@ -80,40 +80,41 @@ namespace WindBot.Game.AI
 
         public void SendSorry()
         {
-            InternalSendMessage(new[] { "Sorry, an error occurs." });
+//            InternalSendMessage(new[] { "Sorry, an error occurs." });
         }
 
         public void SendDeckSorry(string card)
         {
-            if (card == "DECK")
+//            if (card == "DECK")
                 InternalSendMessage(new[] { "Deck illegal. Please check the database of your YGOPro and WindBot." });
-            else
-                InternalSendMessage(_deckerror, card);
+//            else
+//                InternalSendMessage(_deckerror, card);
         }
 
         public void SendWelcome()
         {
-            InternalSendMessage(_welcome);
+//            InternalSendMessage(_welcome);
+			InternalSendMessage(new[] { "/roomname" });
         }
 
         public void SendDuelStart()
         {
-            InternalSendMessage(_duelstart);
+//            InternalSendMessage(_duelstart);
         }
 
         public void SendNewTurn()
         {
-            InternalSendMessage(_newturn);
+//            InternalSendMessage(_newturn);
         }
 
         public void SendEndTurn()
         {
-            InternalSendMessage(_endturn);
+//            InternalSendMessage(_endturn);
         }
 
         public void SendDirectAttack(string attacker)
         {
-            InternalSendMessage(_directattack, attacker);
+//            InternalSendMessage(_directattack, attacker);
         }
 
         public void SendAttack(string attacker, string defender)
@@ -122,7 +123,7 @@ namespace WindBot.Game.AI
             {
                 defender = _facedownmonstername;
             }
-            InternalSendMessage(_attack, attacker, defender);
+//            InternalSendMessage(_attack, attacker, defender);
         }
 
         public void SendOnDirectAttack(string attacker)
@@ -131,31 +132,31 @@ namespace WindBot.Game.AI
             {
                 attacker = _facedownmonstername;
             }
-            InternalSendMessage(_ondirectattack, attacker);
+//            InternalSendMessage(_ondirectattack, attacker);
         }
         public void SendOnDirectAttack()
         {
-            InternalSendMessage(_ondirectattack);
+//            InternalSendMessage(_ondirectattack);
         }
 
         public void SendActivate(string spell)
         {
-            InternalSendMessage(_activate, spell);
+//            InternalSendMessage(_activate, spell);
         }
 
         public void SendSummon(string monster)
         {
-            InternalSendMessage(_summon, monster);
+//            InternalSendMessage(_summon, monster);
         }
 
         public void SendSetMonster()
         {
-            InternalSendMessage(_setmonster);
+//            InternalSendMessage(_setmonster);
         }
 
         public void SendChaining(string card)
         {
-            InternalSendMessage(_chaining, card);
+//            InternalSendMessage(_chaining, card);
         }
 
         private void InternalSendMessage(IList<string> array, params object[] opts)
