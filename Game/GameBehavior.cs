@@ -43,7 +43,7 @@ namespace WindBot.Game
             _ai = new GameAI(Game, _duel);
             _ai.Executor = DecksManager.Instantiate(_ai, _duel);
             Deck = Deck.Load(_ai.Executor.Deck);
-
+            Logger.DebugWriteLine(otherName + " say to " + myName + ": " + message);
             _select_hint = 0;
         }
 
@@ -134,9 +134,9 @@ namespace WindBot.Game
 
         private void OnJoinGame(BinaryReader packet)
         {
-            /*int lflist = (int)*/ packet.ReadUInt32();
-            /*int rule = */ packet.ReadByte();
-            /*int mode = */ packet.ReadByte();
+            int lflist = (int) packet.ReadUInt32();
+            int rule =  packet.ReadByte();
+            int mode =  packet.ReadByte();
             int duel_rule = packet.ReadByte();
             _ai.Duel.IsNewRule = (duel_rule == 4);
             BinaryWriter deck = GamePacketFactory.Create(CtosMessage.UpdateDeck);
@@ -150,6 +150,7 @@ namespace WindBot.Game
                 deck.Write(card.Id);
             Connection.Send(deck);
             _ai.OnJoinGame();
+            Logger.DebugWriteLine("Joined game. LFList:"+lflist+" Rule:"+rule+" Mode:"+mode+"DuelRule:"+duel_rule);
         }
 
         private void OnChangeSide(BinaryReader packet)
@@ -185,9 +186,11 @@ namespace WindBot.Game
         private void OnPlayerEnter(BinaryReader packet)
         {
             string name = packet.ReadUnicode(20);
+			
             int pos = packet.ReadByte();
             if (pos < 8)
                 _room.Names[pos] = name;
+            Logger.DebugWriteLine(name+" entered.");
         }
 
         private void OnPlayerChange(BinaryReader packet)
@@ -273,7 +276,7 @@ namespace WindBot.Game
             string message = packet.ReadUnicode(256);
             string myName = _room.Position == 0 ? _room.Names[0] : _room.Names[1];
             string otherName = _room.Position == 0 ? _room.Names[1] : _room.Names[0];
-            if (player < 4)
+            //if (player < 4)
                 Logger.DebugWriteLine(otherName + " say to " + myName + ": " + message);
         }
 
