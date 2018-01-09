@@ -7,7 +7,7 @@ using WindBot.Game.AI;
 namespace WindBot.Game.AI.Decks
 {
     // NOT FINISHED YET
-    [Deck("yozakura", "AI_YuyukoRank1")]
+    [Deck("YuyukoRank1", "AI_YuyukoRank1")]
     public class YuyukoRank1Executor : DefaultExecutor
     {
         public class CardId
