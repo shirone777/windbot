@@ -12,6 +12,8 @@ namespace WindBot.Game.AI.Decks
     {
         public class CardId
         {
+            public const int Liesun = 200119;
+            public const int YoumuN5 = 20252;
             public const int MimaL9 = 11011;
             public const int YuyukoL8 = 20032;
             public const int YoumuTheMangetsuYuuki = 20238;
@@ -47,18 +49,20 @@ namespace WindBot.Game.AI.Decks
         {
             AddExecutor(ExecutorType.SpellSet, DefaultSpellSet);
 
+            AddExecutor(ExecutorType.Activate, CardId.Liesun);
+            AddExecutor(ExecutorType.Activate, CardId.YoumuN5);
             AddExecutor(ExecutorType.Activate, CardId.YoumeiNoKuwa);
             AddExecutor(ExecutorType.Activate, CardId.KokoroCorona);
-            AddExecutor(ExecutorType.Activate, CardId.Mougakyou);
             AddExecutor(ExecutorType.Activate, CardId.HiNoOtoko);
-            AddExecutor(ExecutorType.Activate, CardId.Hakugyokurou);
             AddExecutor(ExecutorType.Activate, CardId.NueL3);
+            AddExecutor(ExecutorType.Activate, CardId.Mougakyou);
             AddExecutor(ExecutorType.Activate, CardId.YoumuTheSweetMaid);
+            AddExecutor(ExecutorType.SpSummon, CardId.YoumuTheBluesky);
+            AddExecutor(ExecutorType.Activate, CardId.Hakugyokurou);
 
             AddExecutor(ExecutorType.SpSummon, CardId.MimaL9);
             AddExecutor(ExecutorType.SpSummon, CardId.YuyukoL8);
             AddExecutor(ExecutorType.SpSummon, CardId.YoumuTheAkaSakuraYuurei);
-            AddExecutor(ExecutorType.SpSummon, CardId.YoumuTheBluesky);
             AddExecutor(ExecutorType.Summon, CardId.HatanokokoroL4);
             AddExecutor(ExecutorType.SummonOrSet, CardId.HatanokokoroL4);
             AddExecutor(ExecutorType.Summon, CardId.YoumuTheHalfSpirit);
@@ -72,7 +76,7 @@ namespace WindBot.Game.AI.Decks
             AddExecutor(ExecutorType.SpSummon, CardId.YoumuR4);
             AddExecutor(ExecutorType.SpSummon, CardId.LinkReimu);
             AddExecutor(ExecutorType.SpSummon, CardId.LinkReisen);
-
+            
             AddExecutor(ExecutorType.Activate, CardId.JigenYuuhei, DefaultUniqueTrap);
             
 
