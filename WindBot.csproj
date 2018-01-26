@@ -68,6 +68,7 @@
     <Compile Include="Game\AI\DecksManager.cs" />
     <Compile Include="Game\AI\Decks\YuyukoRank1Executor.cs" />
     <Compile Include="Game\AI\Decks\YuyukoRank2Executor.cs" />
+    <Compile Include="Game\AI\Decks\YuyukoRank3Executor.cs" />
     <Compile Include="Game\AI\DefaultExecutor.cs" />
     <Compile Include="Game\AI\Dialogs.cs" />
     <Compile Include="Game\AI\Enums\DangerousMonster.cs" />

@@ -7,8 +7,8 @@ using WindBot.Game.AI;
 namespace WindBot.Game.AI.Decks
 {
     // NOT FINISHED YET
-    [Deck("YuyukoRank2", "AI_YuyukoRank2")]
-    public class YuyukoRank2Executor : DefaultExecutor
+    [Deck("YuyukoRank3", "AI_YuyukoRank3")]
+    public class YuyukoRank3Executor : DefaultExecutor
     {
         public class CardId
         {
@@ -16,19 +16,19 @@ namespace WindBot.Game.AI.Decks
             public const int YoumuN5 = 20252;
             public const int Bing = 20046;
             public const int MimaL9 = 11011;
-            public const int YuyukoL8 = 20032;
-            public const int YoumuTheMangetsuYuuki = 20241;
-            public const int YoumuTheAkaSakuraYuurei = 20235;
+            public const int YuyukoL8 = 2003200;
+            public const int YoumuTheMangetsuYuuki = 20238;
+            public const int YoumuTheAkaSakuraYuurei = 20237;
             public const int HatanokokoroL4 = 25081;
             public const int YoumuTheHalfSpirit = 20257;
-            public const int YoumuTheBluesky = 20083;
+            public const int YoumuTheBluesky = 20084;
             public const int NueL3 = 26125;
             public const int YoumuTheSweetMaid = 20248;
-            public const int YoumuTheHalfSpiritL3 = 20210;
+            public const int YoumuTheHalfSpiritL3 = 20212;
             public const int YoumeiNoKuwa = 20193;
             public const int KokoroCorona = 25127;
             public const int Mougakyou = 20090;
-            public const int KanataOfTamaSakura = 20178;
+            public const int KanataOfTamaSakura = 20179;
             public const int HiNoOtoko = 25096;
             public const int Hakugyokurou = 20050;
             public const int JigenYuuhei = 10113;
@@ -45,7 +45,7 @@ namespace WindBot.Game.AI.Decks
             public const int LinkReisen = 21501;
         }
 
-        public YuyukoRank2Executor(GameAI ai, Duel duel)
+        public YuyukoRank3Executor(GameAI ai, Duel duel)
             : base(ai, duel)
         {
             AddExecutor(ExecutorType.SpellSet, DefaultSpellSet);
@@ -326,22 +326,12 @@ namespace WindBot.Game.AI.Decks
 
         private bool YuyukoL8Summon()
         {
-            AI.SelectCard(new[]
-                {
-                    CardId.NueL3,
-                    CardId.YoumuTheSweetMaid,
-                    CardId.YoumuF6,
-                    CardId.YoumuSanaeF,
-                    CardId.AyaS8,
-                    CardId.YoumuS6,
-                    CardId.LoliceR4,
-                    CardId.YoumuR4,
-                    CardId.LinkYuuka,
-                    CardId.LinkReimu,
-                    CardId.LinkReimu,
-                    CardId.LinkYuyuko,
-                    CardId.YoumuTheHalfSpirit
-            });
+            ClientCard target = AI.Utils.GetBestEnemyCard();
+            if (target != null)
+            {
+                AI.SelectCard(target);
+                return true;
+            }
             return true;
         }
 

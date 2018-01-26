@@ -14,9 +14,10 @@ namespace WindBot.Game.AI.Decks
         {
             public const int Liesun = 200119;
             public const int YoumuN5 = 20252;
+            public const int Bing = 20046;
             public const int MimaL9 = 11011;
             public const int YuyukoL8 = 20032;
-            public const int YoumuTheMangetsuYuuki = 20238;
+            public const int YoumuTheMangetsuYuuki = 20241;
             public const int YoumuTheAkaSakuraYuurei = 20235;
             public const int HatanokokoroL4 = 25081;
             public const int YoumuTheHalfSpirit = 20257;
