@@ -1,5 +1,5 @@
 {
-  "name": "windbot-server",
+  "name": "windbot-server-thc",
   "interpreter": "/usr/bin/mono",
   "script": "WindBot.exe",
   "args": "servermode=true serverport=2349",
