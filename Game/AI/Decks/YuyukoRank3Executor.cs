@@ -205,7 +205,7 @@ namespace WindBot.Game.AI.Decks
 
         private bool HakugyokurouEffect()
         {
-            if (Card.Location == CardLocation.Hand && Bot.HasInSpellZone(Card.Id) && Bot.GetGraveyardMonsters().Count !=0)
+            if (Bot.GetGraveyardMonsters().Count !=0)
                 return false;
             if (ActivateDescription == AI.Utils.GetStringId(CardId.Hakugyokurou, 1))
             {
